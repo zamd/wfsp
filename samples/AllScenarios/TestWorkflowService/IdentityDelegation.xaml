@@ -1,0 +1,70 @@
+﻿<Activity mc:Ignorable="sap" x:Class="TestWorkflowService.IdentityDelegation" sap:VirtualizedContainerService.HintSize="448,1307.2" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:local="clr-namespace:TestWorkflowService.BackendServiceReference.Activities" xmlns:mas="clr-namespace:Microsoft.Activities.SecurityPack;assembly=Microsoft.Activities.SecurityPack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:mas1="clr-namespace:Microsoft.Activities.SecurityPack;assembly=Microsoft.Activities.SecurityPack" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mv="clr-namespace:Microsoft.VisualBasic;assembly=System" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:s1="clr-namespace:System;assembly=System" xmlns:s2="clr-namespace:System;assembly=System.Xml" xmlns:s3="clr-namespace:System;assembly=System.Core" xmlns:s4="clr-namespace:System;assembly=mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:s5="clr-namespace:System;assembly=System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:sa="clr-namespace:System.Activities;assembly=System.Activities" xmlns:sad="clr-namespace:System.Activities.Debugger;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=System.ServiceModel" xmlns:scg2="clr-namespace:System.Collections.Generic;assembly=System.Core" xmlns:scg3="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data.DataSetExtensions" xmlns:sit="clr-namespace:System.IdentityModel.Tokens;assembly=System.IdentityModel" xmlns:sl="clr-namespace:System.Linq;assembly=System.Core" xmlns:ssa="clr-namespace:System.ServiceModel.Activities;assembly=System.ServiceModel.Activities" xmlns:st="clr-namespace:System.Text;assembly=mscorlib" xmlns:sxs="clr-namespace:System.Xml.Serialization;assembly=System.Xml" xmlns:tb="clr-namespace:TestWorkflowService.BackendServiceReference" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Sequence DisplayName="Main RequestReply Sequence" sad:XamlDebuggerXmlReader.FileName="C:\zuahmed\Project\Samples\AllScenarios\TestWorkflowService\IdentityDelegation.xaml" sap:VirtualizedContainerService.HintSize="408,1267.2" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="p1:CorrelationHandle" Name="__handle1" />
+      <Variable x:TypeArguments="x:String" Name="inputVar" />
+      <Variable x:TypeArguments="x:String" Name="finalOutput" />
+      <Variable x:TypeArguments="mas1:SecurityTokenHandle" Name="tokenHandle" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+      </scg3:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <mas1:OperationContextScope sap:VirtualizedContainerService.HintSize="385.6,432">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <Sequence sap:VirtualizedContainerService.HintSize="276.8,355.2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg3:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <p1:Receive x:Name="__ReferenceID0" CanCreateInstance="True" DisplayName="StartWF-Receive" sap:VirtualizedContainerService.HintSize="254.4,92.8" OperationName="Echo" ServiceContractName="p:IEchoService">
+          <p1:Receive.CorrelationInitializers>
+            <p1:RequestReplyCorrelationInitializer CorrelationHandle="[__handle1]" />
+          </p1:Receive.CorrelationInitializers>
+          <p1:ReceiveParametersContent>
+            <OutArgument x:TypeArguments="x:String" x:Key="input">[inputVar]</OutArgument>
+          </p1:ReceiveParametersContent>
+        </p1:Receive>
+        <mas1:InitializeActAsToken DisplayName="InitializeDelegationTokenToHandle" sap:VirtualizedContainerService.HintSize="254.4,97.6" TokenHandle="[tokenHandle]">
+          <ActivityFunc x:TypeArguments="sit:SecurityToken">
+            <mas1:GetBootstrapToken DisplayName="GetBootstrapTokenFromOperationContext" sap:VirtualizedContainerService.HintSize="200,23.2" />
+          </ActivityFunc>
+        </mas1:InitializeActAsToken>
+      </Sequence>
+    </mas1:OperationContextScope>
+    <WriteLine sap:VirtualizedContainerService.HintSize="385.6,62.4" Text="[&quot;Getting Saml token Acting As client...&quot;&quot;&quot;]" />
+    <mas1:TokenFlowScope sap:VirtualizedContainerService.HintSize="385.6,182.4" TokenHandle="[tokenHandle]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <mas1:InitializeSamlSecurityToken TokenHandle="{x:Null}" AppliesTo="[New Uri(&quot;http://localhost:9090&quot;)]" DisplayName="CreateSAMLTokenActingAs" sap:VirtualizedContainerService.HintSize="296,94.4" IssuerEndpointConfigurationName="stsEPR" TrustVersion="WSTrust13" />
+    </mas1:TokenFlowScope>
+    <WriteLine sap:VirtualizedContainerService.HintSize="385.6,62.4" Text="Calling backend service..." />
+    <mas1:TokenFlowScope sap:VirtualizedContainerService.HintSize="385.6,110.4" TokenHandle="[tokenHandle]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg3:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg3:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <local:Transform DisplayName="BackendService-Transform" EndpointConfigurationName="WS2007FederationHttpBinding_ITransformerService" sap:VirtualizedContainerService.HintSize="262.4,22.4" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" TransformResult="[finalOutput]" input="[inputVar]" />
+    </mas1:TokenFlowScope>
+    <p1:SendReply Request="{x:Reference __ReferenceID0}" DisplayName="SendTransformOutputAsResult" sap:VirtualizedContainerService.HintSize="385.6,92.8">
+      <p1:SendParametersContent>
+        <InArgument x:TypeArguments="x:String" x:Key="output">[finalOutput]</InArgument>
+      </p1:SendParametersContent>
+    </p1:SendReply>
+  </Sequence>
+</Activity>

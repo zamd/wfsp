@@ -1,0 +1,79 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="TestWorkflowService.BackendServiceReference.Activities.Transform" this:Transform.EndpointConfigurationName="WS2007FederationHttpBinding_ITransformerService"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:tb="clr-namespace:TestWorkflowService.BackendServiceReference;assembly=TestWorkflowService, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:tb1="clr-namespace:TestWorkflowService.BackendServiceReference;assembly=TestWorkflowService"
+ xmlns:this="clr-namespace:TestWorkflowService.BackendServiceReference.Activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>WS2007FederationHttpBinding_ITransformerService</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="input" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="TransformResult" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/ITransformerService/Transform" OperationName="Transform" ServiceContractName="p:ITransformerService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="tb1:TransformRequest">[New TestWorkflowService.BackendServiceReference.TransformRequest() With { .input = input }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/ITransformerService/TransformResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="tb1:TransformResponse">
+          <VariableReference x:TypeArguments="tb1:TransformResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="tb1:TransformResponse" x:Name="__ReferenceID1" Name="tempResult_85635a4c99c6411da06ef8bb19963a51" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[TransformResult]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[tempResult_85635a4c99c6411da06ef8bb19963a51.TransformResult]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d78BQzpcenVhaG1lZFxXRlNQLVByb2plY3RcV0ZTUFxTYW1wbGVzXEFsbFNjZW5hcmlvc1xUZXN0V29ya2Zsb3dTZXJ2aWNlXFNlcnZpY2UgUmVmZXJlbmNlc1xCYWNrZW5kU2VydmljZVJlZmVyZW5jZVxUZXN0V29ya2Zsb3dTZXJ2aWNlLkJhY2tlbmRTZXJ2aWNlUmVmZXJlbmNlLklUcmFuc2Zvcm1lclNlcnZpY2UuVHJhbnNmb3JtLnhhbWwJIANODgIBASUFOQ8CAQo6BUQXAgEHRQVMDgIBAjQ8NJgBAgEMKg8uHwIBCz0LQR8CAQlKMEptAgEFRzFHQgIBAw==</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>

@@ -1,0 +1,79 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="TestClient.IdentityDelegationServiceReference.Activities.Echo" this:Echo.EndpointConfigurationName="WSHttpBinding_IEchoService1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:this="clr-namespace:TestClient.IdentityDelegationServiceReference.Activities"
+ xmlns:ti="clr-namespace:TestClient.IdentityDelegationServiceReference;assembly=TestClient, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:ti1="clr-namespace:TestClient.IdentityDelegationServiceReference;assembly=TestClient"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>WSHttpBinding_IEchoService1</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="input" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="output" Type="OutArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IEchoService/Echo" OperationName="Echo" ServiceContractName="p:IEchoService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="ti1:EchoRequest">[New TestClient.IdentityDelegationServiceReference.EchoRequest() With { .input = input }]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IEchoService/EchoResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="ti1:EchoResponse">
+          <VariableReference x:TypeArguments="ti1:EchoResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="ti1:EchoResponse" x:Name="__ReferenceID1" Name="tempResult_fe7998c52521427ea2e492666375beb3" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <Assign>
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[output]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[tempResult_fe7998c52521427ea2e492666375beb3.output]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <sads:DebugSymbol.Symbol>d7cBQzpcenVhaG1lZFxXRlNQLVByb2plY3RcV0ZTUFxTYW1wbGVzXEFsbFNjZW5hcmlvc1xUZXN0Q2xpZW50XFNlcnZpY2UgUmVmZXJlbmNlc1xJZGVudGl0eURlbGVnYXRpb25TZXJ2aWNlUmVmZXJlbmNlXFRlc3RDbGllbnQuSWRlbnRpdHlEZWxlZ2F0aW9uU2VydmljZVJlZmVyZW5jZS5JRWNob1NlcnZpY2UuRWNoby54YW1sCSADTg4CAQElBTkPAgEKOgVEFwIBB0UFTA4CAQI0NzSQAQIBDCoPLh8CAQs9C0EfAgEJSjBKZAIBBUcxRzkCAQM=</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>

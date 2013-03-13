@@ -1,0 +1,65 @@
+<Activity mc:Ignorable="sap2010 sads" x:Class="TestClient.PrincipalPermissionServiceReference.Activities.PerformPrivilegedOp" this:PerformPrivilegedOp.EndpointConfigurationName="WSHttpBinding_IAuctionService"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:p="http://tempuri.org/"
+ xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:sc="clr-namespace:System.ComponentModel;assembly=System"
+ xmlns:this="clr-namespace:TestClient.PrincipalPermissionServiceReference.Activities"
+ xmlns:tp="clr-namespace:TestClient.PrincipalPermissionServiceReference;assembly=TestClient, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"
+ xmlns:tp1="clr-namespace:TestClient.PrincipalPermissionServiceReference;assembly=TestClient"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="EndpointConfigurationName" Type="x:String">
+      <x:Property.Attributes>
+        <sc:DefaultValueAttribute>
+          <x:Arguments>
+            <x:String>WSHttpBinding_IAuctionService</x:String>
+          </x:Arguments>
+        </sc:DefaultValueAttribute>
+      </x:Property.Attributes>
+    </x:Property>
+  </x:Members>
+  <mva:VisualBasic.Settings>Assembly references and imported namespaces serialized as XML namespaces</mva:VisualBasic.Settings>
+  <Sequence>
+    <Sequence.Variables>
+      <x:Reference>__ReferenceID1</x:Reference>
+      <x:Reference>__ReferenceID2</x:Reference>
+    </Sequence.Variables>
+    <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IAuctionService/PerformPrivilegedOp" OperationName="PerformPrivilegedOp" ServiceContractName="p:IAuctionService">
+      <p1:Send.CorrelationInitializers>
+        <p1:RequestReplyCorrelationInitializer>
+          <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+            <InArgument x:TypeArguments="p1:CorrelationHandle">
+              <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue.Variable>
+                  <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                </VariableValue.Variable>
+              </VariableValue>
+            </InArgument>
+          </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+        </p1:RequestReplyCorrelationInitializer>
+      </p1:Send.CorrelationInitializers>
+      <p1:SendMessageContent>
+        <InArgument x:TypeArguments="tp1:PerformPrivilegedOpRequest">[New TestClient.PrincipalPermissionServiceReference.PerformPrivilegedOpRequest()]</InArgument>
+      </p1:SendMessageContent>
+      <p1:Send.EndpointConfigurationName>
+        <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+      </p1:Send.EndpointConfigurationName>
+    </p1:Send>
+    <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IAuctionService/PerformPrivilegedOpResponse">
+      <p1:ReceiveMessageContent>
+        <OutArgument x:TypeArguments="tp1:PerformPrivilegedOpResponse">
+          <VariableReference x:TypeArguments="tp1:PerformPrivilegedOpResponse">
+            <VariableReference.Variable>
+              <Variable x:TypeArguments="tp1:PerformPrivilegedOpResponse" x:Name="__ReferenceID1" Name="tempResult_1afc127a10134a91ad4f9ec3457bc0ef" />
+            </VariableReference.Variable>
+          </VariableReference>
+        </OutArgument>
+      </p1:ReceiveMessageContent>
+    </p1:ReceiveReply>
+    <sads:DebugSymbol.Symbol>d8sBQzpcenVhaG1lZFxXRlNQLVByb2plY3RcV0ZTUFxTYW1wbGVzXEFsbFNjZW5hcmlvc1xUZXN0Q2xpZW50XFNlcnZpY2UgUmVmZXJlbmNlc1xQcmluY2lwYWxQZXJtaXNzaW9uU2VydmljZVJlZmVyZW5jZVxUZXN0Q2xpZW50LlByaW5jaXBhbFBlcm1pc3Npb25TZXJ2aWNlUmVmZXJlbmNlLklBdWN0aW9uU2VydmljZS5QZXJmb3JtUHJpdmlsZWdlZE9wLnhhbWwGGgNADgIBAR8FMw8CAQU0BT4XAgECLkYulwECAQckDygfAgEGNws7HwIBBA==</sads:DebugSymbol.Symbol>
+  </Sequence>
+</Activity>
