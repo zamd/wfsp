@@ -7,7 +7,10 @@ in WF 4.*.  WFSP activities blend with the rest of the WF to bring end-to-end in
 Please see following resources for additional details: 
 
 http://zamd.net/2010/02/23/introducing-workflow-security-pack/
+
 http://zamd.net/2010/05/18/integrating-wif-with-wf-4-0-and-appfabric/
+
 http://msdn.microsoft.com/en-us/magazine/gg598919.aspx
+
 http://wf.codeplex.com/releases/view/48114
 
