@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Activities.SecurityPack", "Microsoft.Activities.SecurityPack\Microsoft.Activities.SecurityPack.csproj", "{D82FB666-FF0D-4956-8A3E-4EB966A74B34}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.Activities.SecurityPack.Designers", "Microsoft.Activities.SecurityPack.Designer\Microsoft.Activities.SecurityPack.Designers.csproj", "{EBD5D8D8-1D6C-45A6-9D52-CFD852CD2AD6}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfsguest:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Microsoft.Activities.SecurityPack.Designer\\Microsoft.Activities.SecurityPack.Designers.csproj
+		SccProjectName1 = Microsoft.Activities.SecurityPack.Designer
+		SccLocalPath1 = Microsoft.Activities.SecurityPack.Designer
+		SccProjectUniqueName2 = Microsoft.Activities.SecurityPack\\Microsoft.Activities.SecurityPack.csproj
+		SccProjectName2 = Microsoft.Activities.SecurityPack
+		SccLocalPath2 = Microsoft.Activities.SecurityPack
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D82FB666-FF0D-4956-8A3E-4EB966A74B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D82FB666-FF0D-4956-8A3E-4EB966A74B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D82FB666-FF0D-4956-8A3E-4EB966A74B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D82FB666-FF0D-4956-8A3E-4EB966A74B34}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBD5D8D8-1D6C-45A6-9D52-CFD852CD2AD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBD5D8D8-1D6C-45A6-9D52-CFD852CD2AD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBD5D8D8-1D6C-45A6-9D52-CFD852CD2AD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBD5D8D8-1D6C-45A6-9D52-CFD852CD2AD6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
