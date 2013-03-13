@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EBD5D8D8-1D6C-45A6-9D52-CFD852CD2AD6}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Activities.SecurityPack.Designers</RootNamespace>
+    <AssemblyName>Microsoft.Activities.SecurityPack.Designers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="InitializeX509SecurityTokenDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImpersonateTokenScopeDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GetBootstrapTokenDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImpersonatingReceiveScopeDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OperationContextScopeDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InitializeActAsTokenDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InitializeSamlSecurityTokenDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="InitializeUserNameSecurityTokenDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TokenFlowScopeDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PrincipalPermissionScopeDesigner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="InitializeX509SecurityTokenDesigner.xaml.cs">
+      <DependentUpon>InitializeX509SecurityTokenDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImpersonateTokenScopeDesigner.xaml.cs">
+      <DependentUpon>ImpersonateTokenScopeDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Designers.cs" />
+    <Compile Include="GetBootstrapTokenDesigner.xaml.cs">
+      <DependentUpon>GetBootstrapTokenDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImpersonatingReceiveScopeDesigner.xaml.cs">
+      <DependentUpon>ImpersonatingReceiveScopeDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OperationContextScopeDesigner.xaml.cs">
+      <DependentUpon>OperationContextScopeDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InitializeActAsTokenDesigner.xaml.cs">
+      <DependentUpon>InitializeActAsTokenDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InitializeSamlSecurityTokenDesigner.xaml.cs">
+      <DependentUpon>InitializeSamlSecurityTokenDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InitializeUserNameSecurityTokenDesigner.xaml.cs">
+      <DependentUpon>InitializeUserNameSecurityTokenDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TokenFlowScopeDesigner.xaml.cs">
+      <DependentUpon>TokenFlowScopeDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrincipalPermissionScopeDesigner.xaml.cs">
+      <DependentUpon>PrincipalPermissionScopeDesigner.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

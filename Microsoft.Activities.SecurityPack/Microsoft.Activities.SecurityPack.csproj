@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D82FB666-FF0D-4956-8A3E-4EB966A74B34}</ProjectGuid>
+    <ProjectTypeGuids>{32f31d43-81cc-4c15-9de6-3fc5453562b6};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Microsoft.Activities.SecurityPack</RootNamespace>
+    <AssemblyName>Microsoft.Activities.SecurityPack</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject />
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Activities" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="Diagnostics.cs" />
+    <Compile Include="GenericXmlSecurityTokenHandler.cs" />
+    <Compile Include="GetBootstrapToken.cs" />
+    <Compile Include="GetSamlSecurityToken.cs" />
+    <Compile Include="GetUserNameSecurityToken.cs" />
+    <Compile Include="IconMoniker.cs" />
+    <Compile Include="ImpersonatingReceiveScope.cs" />
+    <Compile Include="InitializeActAsToken.cs" />
+    <Compile Include="InitializeSamlSecurityToken.cs" />
+    <Compile Include="InitializeUserNameSecurityToken.cs" />
+    <Compile Include="InitializeX509SecurityToken.cs" />
+    <Compile Include="OperationContextExtensions.cs" />
+    <Compile Include="OperationContextScope.cs" />
+    <Compile Include="PrincipalPermissionScope.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="S4UClient.cs" />
+    <Compile Include="SamlUtil.cs" />
+    <Compile Include="SecurityTokenHandle.cs" />
+    <Compile Include="SR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TokenFlowScope.cs" />
+    <Compile Include="ClientCredentialsAdapterBehavior.cs" />
+    <Compile Include="TrackingRecords.cs" />
+    <Compile Include="WorkflowClientCredentials.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.Activities.SecurityPack.Designer\Microsoft.Activities.SecurityPack.Designers.csproj">
+      <Project>{EBD5D8D8-1D6C-45A6-9D52-CFD852CD2AD6}</Project>
+      <Name>Microsoft.Activities.SecurityPack.Designers</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ToolboxIcons\GetBootstrapToken.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\GetSamlToken.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\GetUserNameToken.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\InitializeActAs.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\InitializeSamlToken.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\InitializeUserNameToken.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\InitializeWindowsToken.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\InitializeX509Token.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\OperationScope.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\PrincipalPermission.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\TokenFlowScope.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ToolboxIcons\ImpersonateTokenScope.bmp" />
+    <EmbeddedResource Include="ToolboxIcons\ImpersonatingReceive.bmp" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /Y  /R $(TargetDir)Microsoft.Activities.SecurityPack*.dll $(SolutionDir)..\drop</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
