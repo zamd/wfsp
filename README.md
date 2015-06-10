@@ -14,3 +14,4 @@ http://msdn.microsoft.com/en-us/magazine/gg598919.aspx
 
 http://wf.codeplex.com/releases/view/48114
 
+[![Build status](https://ci.appveyor.com/api/projects/status/j6spj96yguti5x4k/branch/master?svg=true)](https://ci.appveyor.com/project/Zulfiqar/wfsp/branch/master)
