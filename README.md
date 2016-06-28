@@ -1,5 +1,5 @@
 Workflow Security Pack
-=========================
+==========================
 
 Workflow Security Pack (WFSP) is a collection of activities and associated plumbing to enable key security scenarios
 in WF 4.*.  WFSP activities blend with the rest of the WF to bring end-to-end integrated security into workflow solutions.
